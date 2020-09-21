@@ -62,6 +62,11 @@ img {
   height: auto;
 }
 
+.highlight{
+  color: #FFD15C!important
+  ;
+}
+
 .avatar-image{
   border-radius: 10px;
   max-height: 35vh;
