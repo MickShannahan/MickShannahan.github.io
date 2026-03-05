@@ -16,9 +16,9 @@ watch(theme, () => {
 </script>
 
 <template>
-  <nav class="bg-primary ">
+  <nav class="bg-primary">
     <div class="d-flex flex-column px-2 sticky-top">
-      <img class="rounded rounded-4 me-img" src="/img/me.jpeg" alt="">
+      <img class="rounded rounded-4 me-img no-invert" src="/img/me.jpeg" alt="">
     </div>
   </nav>
 </template>

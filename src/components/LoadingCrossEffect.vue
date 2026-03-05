@@ -1,7 +1,7 @@
 <script setup>
 
 function randomDelay(i = 0) {
-  return ((i * .5) * (Math.random() * 1.8) * .06) + .5
+  return ((i * .5) * (Math.random() * 1.2) * .06) + .2
 }
 
 </script>
