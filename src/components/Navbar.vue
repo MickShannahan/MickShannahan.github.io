@@ -16,10 +16,20 @@ watch(theme, () => {
 </script>
 
 <template>
-  <nav>Navbar</nav>
+  <nav class="bg-primary ">
+    <div class="d-flex flex-column px-2 sticky-top">
+      <img class="rounded rounded-4 me-img" src="/img/me.jpeg" alt="">
+    </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
+.me-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
 a {
   text-decoration: none;
 }

@@ -1,9 +1,32 @@
+@import '_fonts.scss';
 @import '_main.scss';
+
+:root {}
 
 #app {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+}
+
+.cross-bg {
+  position: relative;
+
+  &::before {
+    animation: bg-fade-in .5s .5s ease forwards;
+    transition: all .5s ease;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1500 1500" xmlns="http://www.w3.org/2000/svg"><path d="M512.5 37C512.5 16.5655 495.935 0 475.5 0H402.5C382.065 0 365.5 16.5655 365.5 37V328.5C365.5 348.935 348.935 365.5 328.5 365.5H37C16.5655 365.5 4.08415e-06 382.065 3.19093e-06 402.5L0 475.5C-8.93218e-07 495.934 16.5655 512.5 37 512.5H328.5C348.935 512.5 365.5 529.065 365.5 549.5V841C365.5 861.435 382.065 878 402.5 878H475.5C495.935 878 512.5 861.435 512.5 841V549.5C512.5 529.065 529.065 512.5 549.5 512.5H841C861.435 512.5 878 495.935 878 475.5V402.5C878 382.065 861.435 365.5 841 365.5H549.5C529.065 365.5 512.5 348.935 512.5 328.5V37Z" fill="blue"/></svg>');
+    // opacity: 0;
+    background-size: 10px 10px;
+  }
+}
+
+.border-inset {
+  outline: 1px solid currentColor;
+  outline-offset: -10px;
 }
 
 main {
@@ -17,4 +40,14 @@ main {
   flex-direction: column;
   justify-content: start;
   align-items: end;
+}
+
+@keyframes bg-fade-in {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
