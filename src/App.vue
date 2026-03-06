@@ -3,11 +3,14 @@ import LoadingCrossEffect from './components/LoadingCrossEffect.vue';
 import Navbar from './components/Navbar.vue';
 import { RouterView } from 'vue-router';
 import twoColorOslo from './assets/img/NegaOslo-2color.gif'
+import { ref } from 'vue';
 
+
+const boollll = ref(false)
 </script>
 
 <template>
-  <LoadingCrossEffect />
+  <LoadingCrossEffect :show="boollll" :inverted="boollll" />
   <header class="bg-primary d-flex justify-content-between align-items-bottom">
     <div>
       <h1 class="px-2 pt-4 text-light font-satoshi m-0 fw-bold">Mick Shannahan<span class="large-period">.</span>

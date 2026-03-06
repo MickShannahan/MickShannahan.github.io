@@ -18,7 +18,7 @@ watch(theme, () => {
 <template>
   <nav class="bg-primary">
     <div class="d-flex flex-column px-2 sticky-top">
-      <img class="rounded rounded-4 me-img no-invert" src="/img/me.jpeg" alt="">
+      <img class="rounded rounded-4 me-img no-invert" src="/img/portfolio-2.gif" alt="">
     </div>
   </nav>
 </template>
@@ -28,6 +28,7 @@ watch(theme, () => {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+  filter: saturate(0) brightness(.9);
 }
 
 a {
