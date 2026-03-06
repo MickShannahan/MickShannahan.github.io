@@ -5,6 +5,8 @@
 
 body {
   background-color: var(--bs-primary);
+  width: 100dvw;
+  overflow-x: hidden;
 
   &:after {
     pointer-events: none;
@@ -13,7 +15,6 @@ body {
     inset: 0;
     content: '';
     background: var(--bs-light);
-    height: 100%;
     z-index: 9999;
     backdrop-filter: hue-rotate(10deg);
     mix-blend-mode: difference;
@@ -24,11 +25,28 @@ body {
 body[data-bs-theme="dark"] {
   img.no-invert {
     filter: invert(1);
+    transition: all 1s 1s ease;
   }
 
   &:after {
     opacity: 1;
   }
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Sora-Bold';
+  font-size: 2em;
+}
+
+button.btn,
+a.btn {
+  font-family: 'Sora-Medium';
+}
+
+p {
+  font-family: monospace;
 }
 
 .invert {
@@ -58,6 +76,12 @@ body[data-bs-theme="dark"] {
   }
 }
 
+.bg-grid-warp {
+  background-image: url(../img/VectorGridWarpGreen.png);
+  background-size: contain;
+  background-position: center;
+}
+
 .border-inset {
   outline: 1px solid currentColor;
   outline-offset: -10px;
@@ -68,6 +92,9 @@ main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+
+  border-top-left-radius: 40px;
+  overflow: hidden;
 }
 
 #pop-toast-container {
@@ -84,5 +111,21 @@ main {
 
   100% {
     opacity: 0;
+  }
+}
+
+.hard-shadow {
+  --shadow-color: var(--bs-dark);
+  --shadow-direction: 5px;
+  box-shadow: var(--shadow-direction) 5px var(--shadow-color);
+}
+
+.hard-shadow.reverse-shadow {
+  --shadow-direction: -5px;
+}
+
+@each $color-name, $color-value in $theme-colors {
+  .hard-shadow.shadow-#{$color-name} {
+    --shadow-color: var(--bs-#{$color-name});
   }
 }

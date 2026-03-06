@@ -3,7 +3,21 @@ import LoadingCrossEffect from './components/LoadingCrossEffect.vue';
 import Navbar from './components/Navbar.vue';
 import { RouterView } from 'vue-router';
 import twoColorOslo from './assets/img/NegaOslo-2color.gif'
-import { ref } from 'vue';
+
+import { ref, watch } from 'vue';
+import { loadState, saveState } from './utils/Store.js';
+
+const theme = ref(loadState('theme') || 'light')
+
+function toggleTheme() {
+  theme.value = theme.value == 'light' ? 'dark' : 'light'
+}
+
+watch(theme, () => {
+  document.documentElement.setAttribute('data-bs-theme', theme.value)
+  document.body.setAttribute('data-bs-theme', theme.value)
+  saveState('theme', theme.value)
+}, { immediate: true })
 
 
 const boollll = ref(false)
@@ -16,8 +30,8 @@ const boollll = ref(false)
       <h1 class="px-2 pt-4 text-light font-satoshi m-0 fw-bold">Mick Shannahan<span class="large-period">.</span>
       </h1>
     </div>
-    <img style="height: auto; width: 180px; margin-top: -20px; margin-bottom: -20px;"
-      class="d-none d-md-block invert rounded rounded-2" :src="twoColorOslo" alt="">
+    <img @click="toggleTheme" style="height: auto; width: 180px; margin-top: -20px; margin-bottom: -20px;"
+      class="d-none d-md-block invert rounded rounded-2 selectable" :src="twoColorOslo" alt="">
   </header>
   <section class="main-layout">
     <Navbar />
@@ -30,11 +44,6 @@ const boollll = ref(false)
 </template>
 
 <style lang="scss">
-main {
-  border-top-left-radius: 24px;
-}
-
-
 h1 {
   position: relative;
   z-index: 1001;

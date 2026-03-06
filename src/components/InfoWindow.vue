@@ -5,7 +5,7 @@
 
 <template>
   <section class="info-window">
-    <div class="info-header px-2 p-1 d-flex justify-content-between">
+    <div class="info-header px-3 p-1 d-flex justify-content-between">
       <slot name="header"></slot>
       <i class="mdi mdi-close"></i>
     </div>

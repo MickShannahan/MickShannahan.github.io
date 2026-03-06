@@ -1,34 +1,38 @@
 <script setup>
-import { ref, watch } from 'vue';
-import { loadState, saveState } from '../utils/Store.js';
 
-const theme = ref(loadState('theme') || 'light')
-
-function toggleTheme() {
-  theme.value = theme.value == 'light' ? 'dark' : 'light'
-}
-
-watch(theme, () => {
-  document.documentElement.setAttribute('data-bs-theme', theme.value)
-  saveState('theme', theme.value)
-}, { immediate: true })
 
 </script>
 
 <template>
-  <nav class="bg-primary">
-    <div class="d-flex flex-column px-2 sticky-top">
-      <img class="rounded rounded-4 me-img no-invert" src="/img/portfolio-2.gif" alt="">
-    </div>
+  <nav class="bg-primary d-flex flex-column justify-content-between pb-3">
+    <section class="d-flex flex-column px-2 sticky-top">
+      <div>
+        <img class="me-img no-invert" src="/img/portfolio-2.gif" alt="">
+      </div>
+
+      <section class="d-flex flex-column gap-2 align-items-center justify-content-end">
+        <a href="https://github.com/MickShannahan" target="_blank" class="btn btn-outline-light"><i
+            class="mdi mdi-github fs-2"></i></a>
+        <a href="https://www.linkedin.com/in/mick-shannahan-5320171b7/" target="_blank" class="btn btn-outline-light"><i
+            class="mdi mdi-linkedin fs-2"></i></a>
+        <a href="mailto:mickshanny@gmail.com" class="btn btn-outline-light"><i class="mdi mdi-email fs-2"></i></a>
+      </section>
+    </section>
   </nav>
 </template>
 
 <style lang="scss" scoped>
+nav section {
+  top: 1em;
+  height: calc(100dvh - 140px);
+}
+
 .me-img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
-  filter: saturate(0) brightness(.9);
+  filter: saturate(.9) brightness(.9);
+  border-radius: 40px;
 }
 
 a {

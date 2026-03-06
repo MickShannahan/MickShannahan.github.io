@@ -2,10 +2,11 @@
 import { delay } from '../utils/Timer.js';
 import { onMounted, ref, watch, watchEffect } from 'vue';
 
-const { text, delayBetweenChars = 100, showCursor = true } = defineProps({
+const { text, delayBetweenChars = 100, showCursor = true, blink = true } = defineProps({
   text: String,
   delayBetweenChars: Number,
-  showCursor: Boolean
+  showCursor: Boolean,
+  blink: Boolean
 })
 
 const currentText = ref('')
@@ -31,7 +32,7 @@ async function typeOutText(text = '', delayBetweenChars = .1) {
 
 
 <template>
-  <div>{{ currentText }}<span :class="`cursor${currentlyTyping ? '' : ' blink'}`"></span></div>
+  <div>{{ currentText }}<span :class="`${currentlyTyping ? 'cursor' : blink ? 'cursor blink' : ''}`"></span></div>
 </template>
 
 
