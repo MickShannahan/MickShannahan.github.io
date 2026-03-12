@@ -79,7 +79,7 @@ const skills = [
       <GithubContributions />
     </section>
 
-    <section class="d-flex flex-wrap gap-1 justify-content-center mb-4">
+    <section class="d-flex flex-wrap gap-1 justify-content-center my-4">
       <SkillBadge v-for="skill in skills" :icon="skill.icon" :img="skill.img" :key="skill.text"
         :bgColor="skill.bgColor">{{
           skill.text }}
@@ -87,14 +87,37 @@ const skills = [
     </section>
 
     <section class="row justify-content-center">
-      <div class="col-md-9">
+      <h3>Job History <i class="mdi mdi-briefcase"></i></h3>
+      <div class="my-3">
         <InfoWindow class="rounded rounded-4">
           <template #header>
-            <span>...</span>
+            <span>2020 - 2025</span>
           </template>
           <template #body>
-            <TextBoxTyper text="With 5+ years developing, and much of that time as an instructor, I've had the opportunity to work with a wide array of technologies and tools. Many of these were skills I
-            learned specifically to write course material I would teach." :delay-between-chars="1" />
+            <h3>Lead Instructor</h3>
+            <p class="fw-bold fs-4">CodeWorks</p>
+            <p>After completing my own training at Boise CodeWorks, I became the Lead Instructor, where I was
+              responsible for creating and maintaining curriculum. This included written and video instructional
+              content, Figma mockups, and Postman test suites. In that role, I regularly evaluated existing project
+              requirements and workflows, refined requirements, and ensured that both our tooling and the material lead
+              to efficient learning that mimicked real-world development practices.</p>
+            <p> Teaching full time required me to learn new technologies quickly, communicate complex ideas clearly, and
+              adapt to a fast moving environment that required me to wear many hats jumping across the stack as needed.
+              It also reinforced the importance of building systems that are easy to reason about and extend, especially
+              when supporting many users with different levels of experience.</p>
+          </template>
+        </InfoWindow>
+      </div>
+      <div class="my-3">
+        <InfoWindow class="rounded rounded-4">
+          <template #header>
+            <span>2015 - 2020</span>
+          </template>
+          <template #body>
+            <h3>Security Installer</h3>
+            <p>I got the pleasure to work on some of the valley's largest customers. I often got to practice creative
+              logical problem solving servicing these systems. Often My responsibilities required me be able to take
+              apart a malfunctioning system or a piece of hardware and put it back together in working order.</p>
           </template>
         </InfoWindow>
       </div>
