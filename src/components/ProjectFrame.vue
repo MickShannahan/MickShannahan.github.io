@@ -18,9 +18,9 @@ defineProps({
 
   <article :class="[orientation]">
     <section class="corner-block">
-      <img :src="coverImg" class="bg-grid-warp">
+      <img :src="coverImg" class="bg-grid-warp no-invert">
     </section>
-    <section class="frame-title">
+    <section class="frame-title text-dark">
       <div :class="`${orientation == 'left' ? 'ps-4' : 'pe-4'}`">
         <!-- title -->
         <div class="">

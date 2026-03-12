@@ -30,7 +30,8 @@ import { ProjectLink } from '@/models/ProjectLink.js'
 
 <template>
   <section id="featured-projects" class="container my-3 mb-4">
-    <h2 class="text-center fs-1"><i class="mdi mdi-close"></i> Featured Projects <i class="mdi mdi-close"></i></h2>
+    <h2 class="text-center text-dark fs-1"><i class="mdi mdi-close"></i> Featured Projects <i class="mdi mdi-close"></i>
+    </h2>
   </section>
 
   <div class="container my-3">
@@ -39,7 +40,7 @@ import { ProjectLink } from '@/models/ProjectLink.js'
       <ProjectFrame title="C.U.P.S" :cover-img="cupsLogo" orientation="left" background="var(--bs-dark)"
         accentBackground="var(--bs-primary)" :links="[
           new ProjectLink('mdi-arrow-top-right-thick', 'try it', 'primary', 'https://catsups.herokuapp.com/#/'),
-          new ProjectLink('mdi-github', 'git repo', 'dark', 'https://github.com/MickShannahan/cat-query-shipping')
+          new ProjectLink('mdi-github', 'repo', 'dark', 'https://github.com/MickShannahan/cat-query-shipping')
         ]">
         <p>The <kbd class="bg-primary">Cat's Universal Postal Service</kbd> Web Game developed wholly by me as a way to
           give
@@ -63,7 +64,7 @@ import { ProjectLink } from '@/models/ProjectLink.js'
         background="var(--bs-green)" textColor="var(--bs-dark)" accentBackground="var(--bs-purple)" :links="[
           new ProjectLink('mdi-arrow-top-right-thick', 'web foundations', 'primary', 'https://course.codeworksacademy.com/web-foundations/'),
           new ProjectLink('mdi-space-invaders', 'unity', 'purple', 'https://course.codeworksacademy.com/unity-launchpad/'),
-          new ProjectLink('mdi-github', 'git repo', 'dark', 'https://github.com/codeworksacademy/codeworksacademy')
+          new ProjectLink('mdi-github', 'repo', 'dark', 'https://github.com/codeworksacademy/codeworksacademy')
         ]">
         <p>
           Frustrated with the current online platforms we wanted to create something we had full control over. Something
@@ -86,12 +87,12 @@ import { ProjectLink } from '@/models/ProjectLink.js'
 
     <!-- SECTION NOTER -->
     <div class="my-5">
-      <ProjectFrame title="Noter" :cover-img="noterLogo" orientation="left" background="var(--bs-dark)"
-        accentBackground="var(--bs-indigo)" :links="[
+      <ProjectFrame title="Noter" :cover-img="noterLogo" orientation="left" background="var(--bs-primary)"
+        accentBackground="var(--bs-dark)" :links="[
           new ProjectLink('mdi-arrow-top-right-thick', 'site', 'primary', 'https://cw-cloud-demo-d0aecab0e751.herokuapp.com/#/'),
           new ProjectLink('mdi-figma', 'Figma Mock', 'pink', 'https://www.figma.com/design/GTKQbvx6AeinXwQUzmkNDV/Dugeon-Noter?node-id=3-819&t=zO3Y6nBmCxpUH3p6-0'),
           new ProjectLink('mdi-rocket', 'Postman', 'orange', 'https://codeworksacademy.postman.co/workspace/%F0%9F%8F%81Fs-Checkpoints~4b386cf9-42e3-4563-94eb-67e9778ef2fe/collection/23988459-eba039c4-e35f-49a7-8ee4-94a099e830bc?action=share&creator=23988459'),
-          new ProjectLink('mdi-github', 'git repo', 'dark', 'https://github.com/MickShannahan/dungeon_noter')
+          new ProjectLink('mdi-github', 'repo', 'dark', 'https://github.com/MickShannahan/dungeon_noter')
         ]">
         <p>
           What started as a personal project to help organize my Dungeon Master notes, turned into one of the project
@@ -104,8 +105,7 @@ import { ProjectLink } from '@/models/ProjectLink.js'
           project came with both suite of <b>Postman</b> tests and a <b>Figma</b> mock.
         </p>
 
-        <ImageCarousel carouselId="noter-carousel" :images="[noter1, noter2, noter3, noter4, noter5]"
-          bgColor="indigo" />
+        <ImageCarousel carouselId="noter-carousel" :images="[noter1, noter2, noter3, noter4, noter5]" bgColor="dark" />
       </ProjectFrame>
     </div>
 

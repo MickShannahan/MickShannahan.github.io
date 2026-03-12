@@ -17,7 +17,7 @@ defineProps({
       <div class="carousel-inner rounded rounded-5">
         <div v-for="(image, index) in images" :key="index"
           :class="['carousel-item', 'bg-grid-warp', `bg-${bgColor}`, { active: index === 0 }]">
-          <img :src="image" class="d-block w-100" alt="...">
+          <img :src="image" class="d-block w-100 no-invert" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" :data-bs-target="`#${carouselId}`" data-bs-slide="prev">
