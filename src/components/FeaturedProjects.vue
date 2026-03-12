@@ -60,9 +60,9 @@ import { ProjectLink } from '@/models/ProjectLink.js'
     <!-- SECTION CODEWORKS COURSE -->
     <div class="my-5">
       <ProjectFrame title="CodeWorks Course Tool" :cover-img="codeworksLogo" orientation="right"
-        background="var(--bs-green)" textColor="var(--bs-dark)" accentBackground="var(--bs-light)" :links="[
-          new ProjectLink('mdi-arrow-top-right-thick', 'Web Foundations', 'primary', 'https://course.codeworksacademy.com/web-foundations/'),
-          new ProjectLink('mdi-space-invaders', 'Unity Launchpad', 'purple', 'https://course.codeworksacademy.com/unity-launchpad/'),
+        background="var(--bs-green)" textColor="var(--bs-dark)" accentBackground="var(--bs-purple)" :links="[
+          new ProjectLink('mdi-arrow-top-right-thick', 'web foundations', 'primary', 'https://course.codeworksacademy.com/web-foundations/'),
+          new ProjectLink('mdi-space-invaders', 'unity', 'purple', 'https://course.codeworksacademy.com/unity-launchpad/'),
           new ProjectLink('mdi-github', 'git repo', 'dark', 'https://github.com/codeworksacademy/codeworksacademy')
         ]">
         <p>
@@ -71,7 +71,7 @@ import { ProjectLink } from '@/models/ProjectLink.js'
           something that would be easy for anyone to create new courses or update old ones.
         </p>
         <p>
-          Built around the <kbd>Vitepress</kbd> documentation framework. With lots of custom plugins, styles and
+          Built around the <b>Vitepress</b> documentation framework. With lots of custom plugins, styles and
           wrappers, we were able to achieve our goal. A learning platform to host both written and video content.
           Project labs that could have progress completed over multiple sessions. The beautify of utilizing a
           documentation framework for this was our entire course was easily searchable through powerful indexing of our
@@ -87,10 +87,10 @@ import { ProjectLink } from '@/models/ProjectLink.js'
     <!-- SECTION NOTER -->
     <div class="my-5">
       <ProjectFrame title="Noter" :cover-img="noterLogo" orientation="left" background="var(--bs-dark)"
-        accentBackground="var(--bs-light)" :links="[
-          new ProjectLink('mdi-arrow-top-right-thick', 'Live Site', 'primary', 'https://cw-cloud-demo-d0aecab0e751.herokuapp.com/#/'),
+        accentBackground="var(--bs-indigo)" :links="[
+          new ProjectLink('mdi-arrow-top-right-thick', 'site', 'primary', 'https://cw-cloud-demo-d0aecab0e751.herokuapp.com/#/'),
           new ProjectLink('mdi-figma', 'Figma Mock', 'pink', 'https://www.figma.com/design/GTKQbvx6AeinXwQUzmkNDV/Dugeon-Noter?node-id=3-819&t=zO3Y6nBmCxpUH3p6-0'),
-          new ProjectLink('mdi-rocket', 'Postman Tests', 'orange', 'https://codeworksacademy.postman.co/workspace/%F0%9F%8F%81Fs-Checkpoints~4b386cf9-42e3-4563-94eb-67e9778ef2fe/collection/23988459-eba039c4-e35f-49a7-8ee4-94a099e830bc?action=share&creator=23988459'),
+          new ProjectLink('mdi-rocket', 'Postman', 'orange', 'https://codeworksacademy.postman.co/workspace/%F0%9F%8F%81Fs-Checkpoints~4b386cf9-42e3-4563-94eb-67e9778ef2fe/collection/23988459-eba039c4-e35f-49a7-8ee4-94a099e830bc?action=share&creator=23988459'),
           new ProjectLink('mdi-github', 'git repo', 'dark', 'https://github.com/MickShannahan/dungeon_noter')
         ]">
         <p>
@@ -104,7 +104,8 @@ import { ProjectLink } from '@/models/ProjectLink.js'
           project came with both suite of <b>Postman</b> tests and a <b>Figma</b> mock.
         </p>
 
-        <ImageCarousel carouselId="noter-carousel" :images="[noter1, noter2, noter3, noter4, noter5]" bgColor="dark" />
+        <ImageCarousel carouselId="noter-carousel" :images="[noter1, noter2, noter3, noter4, noter5]"
+          bgColor="indigo" />
       </ProjectFrame>
     </div>
 

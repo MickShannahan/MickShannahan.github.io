@@ -23,13 +23,13 @@ defineProps({
     <section class="frame-title">
       <div :class="`${orientation == 'left' ? 'ps-4' : 'pe-4'}`">
         <!-- title -->
-        <div class="col-8">
+        <div class="">
           //:{{ title }}
         </div>
         <!-- links -->
-        <div class="d-flex gap-1">
+        <div class="d-flex flex-wrap justify-content-end gap-1">
           <a v-for="link in links" :href="link.link" target="_blank"
-            :class="`btn btn-${link.color} rounded-4 fs-5 px-3`"><span>{{
+            :class="`btn btn-${link.color} rounded-4 px-3 d-flex`"><span>{{
               link.text
             }} <i :class="`mdi ${link.icon}`"></i></span></a>
         </div>
@@ -122,7 +122,7 @@ article.right .frame-body {
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: calc(var(--frame-radius) - 10px);
   }
 }
@@ -134,9 +134,10 @@ article.right .frame-body {
 
 .frame-title div {
   height: 100%;
+  white-space: nowrap;
   background-color: var(--bs-light);
   display: flex;
-  font-size: 48px;
+  font-size: 44px;
   font-family: 'Sora-bold';
   align-items: center;
   justify-content: space-between;
@@ -183,8 +184,8 @@ article.right .frame-body {
 
 .float-box {
   // border: 1px solid var(--bs-light);
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 60px;
 }
 
 article.left .float-box {

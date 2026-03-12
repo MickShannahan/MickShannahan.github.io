@@ -11,7 +11,8 @@ defineProps({
     <div :id="carouselId" class="carousel slide">
       <div class="carousel-indicators">
         <button v-for="(image, index) in images" :key="index" type="button" :data-bs-target="`#${carouselId}`"
-          :data-bs-slide-to="index" :class="{ active: index === 0 }" :aria-current="index === 0"></button>
+          :data-bs-slide-to="index" class="bg-green" :class="{ active: index === 0 }"
+          :aria-current="index === 0"></button>
       </div>
       <div class="carousel-inner rounded rounded-5">
         <div v-for="(image, index) in images" :key="index"
