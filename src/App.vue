@@ -58,7 +58,16 @@ h1 {
 .main-layout {
   flex-grow: 1;
   height: 100%;
-  display: grid;
-  grid-template-columns: 150px 1fr;
+  // display: flex;
+  // grid-template-columns: 150px 1fr;
+}
+
+@media (min-width: 768px) {
+  .main-layout {
+    flex-grow: 1;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+  }
 }
 </style>

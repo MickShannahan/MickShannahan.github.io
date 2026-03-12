@@ -34,7 +34,7 @@ import { ProjectLink } from '@/models/ProjectLink.js'
     </h2>
   </section>
 
-  <div class="container my-3">
+  <div class="container-md my-3">
     <!-- SECTION CUPS -->
     <div class="my-5">
       <ProjectFrame title="C.U.P.S" :cover-img="cupsLogo" orientation="left" background="var(--bs-dark)"

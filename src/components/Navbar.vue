@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <nav class="bg-primary d-flex flex-column justify-content-between pb-3">
+  <nav class="bg-primary d-none d-md-flex flex-column justify-content-between pb-3">
     <section class="d-flex flex-column px-2 sticky-top">
       <div>
         <img class="me-img no-invert" src="/img/portfolio-2.gif" alt="">
@@ -18,6 +18,10 @@
         <a href="mailto:mickshanny@gmail.com" class="btn btn-outline-light"><i class="mdi mdi-email fs-2"></i></a>
       </section>
     </section>
+  </nav>
+
+  <nav class="bg-primary d-flex d-md-none">
+    mobile nave
   </nav>
 </template>
 

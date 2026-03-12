@@ -16,12 +16,12 @@ defineProps({
 
 <template>
 
-  <article :class="[orientation]">
-    <section class="corner-block">
+  <article class="project-frame" :class="[orientation]">
+    <section class="corner-block p-2 p-md-4">
       <img :src="coverImg" class="bg-grid-warp no-invert">
     </section>
     <section class="frame-title text-dark">
-      <div :class="`${orientation == 'left' ? 'ps-4' : 'pe-4'}`">
+      <div :class="`${orientation == 'left' ? 'ps-2 ps-md-4' : 'pe-2 pe-md-4'}`">
         <!-- title -->
         <div class="">
           //:{{ title }}
@@ -29,7 +29,7 @@ defineProps({
         <!-- links -->
         <div class="d-flex flex-wrap justify-content-end gap-1">
           <a v-for="link in links" :href="link.link" target="_blank"
-            :class="`btn btn-${link.color} rounded-4 px-3 d-flex`"><span>{{
+            :class="`btn btn-${link.color} rounded-4 px-md-3 d-flex`"><span>{{
               link.text
             }} <i :class="`mdi ${link.icon}`"></i></span></a>
         </div>
@@ -42,7 +42,7 @@ defineProps({
     </section>
     <section class="frame-body">
       <div class="float-box "></div>
-      <p class="p-2">
+      <p class="p-md-2">
         <slot>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga in eaque a molestias incidunt deleniti sed,
           exercitationem, minima ad eius dolor vitae animi placeat facere adipisci rem. Ab, nesciunt quod.
@@ -56,18 +56,38 @@ defineProps({
 
 
 <style lang="scss" scoped>
+.project-frame {
+  --corner-size: 45px;
+  --frame-radius: 20px;
+}
+
+@media (min-width: 786px) {
+  .project-frame {
+    --corner-size: 75px;
+    --frame-radius: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .project-frame {
+    --corner-size: 100px;
+    --frame-radius: 40px;
+  }
+}
+
+
+
+
 article.left {
-  --frame-radius: 40px;
   display: grid;
-  grid-template-columns: 100px 100px 1fr;
-  grid-template-rows: 100px 100px 1fr;
+  grid-template-columns: var(--corner-size) var(--corner-size) 1fr;
+  grid-template-rows: var(--corner-size) var(--corner-size) 1fr;
 }
 
 article.right {
-  --frame-radius: 40px;
   display: grid;
-  grid-template-columns: 1fr 100px 100px;
-  grid-template-rows: 100px 100px 1fr;
+  grid-template-columns: 1fr var(--corner-size) var(--corner-size);
+  grid-template-rows: var(--corner-size) var(--corner-size) 1fr;
 }
 
 article.left .corner-block {
@@ -113,7 +133,6 @@ article.right .frame-body {
 .corner-block {
   background-color: v-bind(background);
   border-radius: var(--frame-radius);
-  padding: 1.5em;
 
   img {
     background-color: v-bind(accentBackground);

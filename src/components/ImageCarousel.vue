@@ -34,7 +34,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .carousel-item img {
-  height: 600px;
+  max-height: 600px;
   object-fit: contain;
 }
 </style>
