@@ -39,7 +39,10 @@ onUnmounted(() => clearInterval(intervalId))
   <div id="about-me">
     <div class="container">
       <section class="my-4">
-        <h2 class="font-array text-center text-primary">
+        <div class="text-center">
+          <img class="me-img no-invert" src="/img/portfolio-2.gif" alt="">
+        </div>
+        <h2 class="my-4 mb-5 font-array text-center text-primary">
           <TextBoxTyper :text="titles[currentTextIndex]" :delay-between-chars="25" />
         </h2>
       </section>
@@ -96,8 +99,30 @@ onUnmounted(() => clearInterval(intervalId))
 
 
 <style lang="scss" scoped>
-h2 {
-  font-size: 4em;
+.me-img {
+  width: 300px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  filter: saturate(.9) brightness(1);
+  border-radius: 40px;
+  border: 2px solid var(--bs-primary);
+}
+
+@media (min-width: 768px) {
+  .me-img {
+    width: 400px;
+  }
+}
+
+.font-array {
+  line-height: .85em;
+  font-size: 3em;
+}
+
+@media (min-width: 768px) {
+  .font-array {
+    font-size: 4em;
+  }
 }
 
 #about-me {

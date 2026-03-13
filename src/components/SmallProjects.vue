@@ -10,7 +10,7 @@ import SmallProjectCard from './SmallProjectCard.vue';
     <div class="container">
       <div class="row mb-3">
         <h2 class="text-center fs-1"><i class="mdi mdi-close"></i> Misc Projects <i class="mdi mdi-close"></i></h2>
-        <p class="text-center">A highlight of some of the smaller projects i've built often experimenting with different
+        <p class="text-center">A highlight of some of the smaller projects I've built experimenting with different
           technologies</p>
       </div>
       <div class="row g-3">

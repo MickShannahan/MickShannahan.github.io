@@ -48,7 +48,16 @@ h1 {
   position: relative;
   z-index: 1001;
   letter-spacing: 0;
-  font-size: 5em;
+  font-size: 3em;
+  line-height: .85em;
+  padding-bottom: .25em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 5em;
+    padding-bottom: 0;
+  }
 }
 
 .large-period {

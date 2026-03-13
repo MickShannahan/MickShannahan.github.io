@@ -7,7 +7,7 @@
   <nav class="bg-primary d-none d-md-flex flex-column justify-content-between pb-3">
     <section class="d-flex flex-column px-2 sticky-top">
       <div>
-        <img class="me-img no-invert" src="/img/portfolio-2.gif" alt="">
+
       </div>
 
       <section class="d-flex flex-column gap-2 align-items-center justify-content-end">
@@ -21,7 +21,7 @@
   </nav>
 
   <nav class="bg-primary d-flex d-md-none">
-    mobile nave
+
   </nav>
 </template>
 
@@ -31,13 +31,7 @@ nav section {
   height: calc(100dvh - 140px);
 }
 
-.me-img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  filter: saturate(.9) brightness(.9);
-  border-radius: 40px;
-}
+
 
 a {
   text-decoration: none;

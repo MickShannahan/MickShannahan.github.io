@@ -18,7 +18,7 @@ defineProps({
 
   <article class="project-frame" :class="[orientation]">
     <section class="corner-block p-2 p-md-4">
-      <img :src="coverImg" class="bg-grid-warp no-invert">
+      <img :src="coverImg" class="bg-grid-warp no-invert p-0 p-md-2">
     </section>
     <section class="frame-title text-dark">
       <div :class="`${orientation == 'left' ? 'ps-2 ps-md-4' : 'pe-2 pe-md-4'}`">
@@ -28,10 +28,11 @@ defineProps({
         </div>
         <!-- links -->
         <div class="d-flex flex-wrap justify-content-end gap-1">
-          <a v-for="link in links" :href="link.link" target="_blank"
-            :class="`btn btn-${link.color} rounded-4 px-md-3 d-flex`"><span>{{
-              link.text
-            }} <i :class="`mdi ${link.icon}`"></i></span></a>
+          <a v-for="link in links" :key="link.link" :href="link.link" target="_blank"
+            :class="`btn btn-${link.color} rounded-4 px-md-3 d-flex`">
+            <span class="d-none d-md-inline">{{ link.text }}</span>
+            <i :class="`ms-md-1 mdi ${link.icon}`"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -40,9 +41,9 @@ defineProps({
 
       </div>
     </section>
-    <section class="frame-body">
+    <section class="frame-body p-3 pt-5 p-md-4">
       <div class="float-box "></div>
-      <p class="p-md-2">
+      <p class="pt-2 p-md-2">
         <slot>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga in eaque a molestias incidunt deleniti sed,
           exercitationem, minima ad eius dolor vitae animi placeat facere adipisci rem. Ab, nesciunt quod.
@@ -57,8 +58,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .project-frame {
-  --corner-size: 45px;
+  --corner-size: 35px;
   --frame-radius: 20px;
+  --frame-body-cols: 1/span 3;
 }
 
 @media (min-width: 786px) {
@@ -76,61 +78,99 @@ defineProps({
 }
 
 
-
-
 article.left {
   display: grid;
   grid-template-columns: var(--corner-size) var(--corner-size) 1fr;
   grid-template-rows: var(--corner-size) var(--corner-size) 1fr;
+
+  .corner-block {
+    grid-column: 1 / span 2;
+  }
+
+  .frame-title {
+    grid-column: 3;
+  }
+
+  .frame-spine {
+    grid-column: 1;
+  }
+
+  .frame-body {
+    grid-column: 1 / span 3;
+  }
 }
 
 article.right {
   display: grid;
   grid-template-columns: 1fr var(--corner-size) var(--corner-size);
   grid-template-rows: var(--corner-size) var(--corner-size) 1fr;
+
+  .corner-block {
+    grid-column: 2 / span 2;
+  }
+
+  .frame-spine {
+    grid-column: 3;
+  }
+
+  .frame-title {
+    grid-column: 1;
+  }
+
+  .frame-body {
+    grid-column: 1 / span 3;
+  }
 }
 
-article.left .corner-block {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
+@media (min-width:768px) {
+  article.left {
+    display: grid;
+    grid-template-columns: var(--corner-size) var(--corner-size) 1fr;
+    grid-template-rows: var(--corner-size) var(--corner-size) 1fr;
+
+    .corner-block {
+      grid-column: 1 / span 2;
+    }
+
+    .frame-title {
+      grid-column: 3;
+    }
+
+    .frame-spine {
+      grid-column: 1;
+    }
+
+    .frame-body {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  article.right {
+    display: grid;
+    grid-template-columns: 1fr var(--corner-size) var(--corner-size);
+    grid-template-rows: var(--corner-size) var(--corner-size) 1fr;
+
+    .corner-block {
+      grid-column: 2 / span 2;
+    }
+
+    .frame-spine {
+      grid-column: 3;
+    }
+
+    .frame-title {
+      grid-column: 1;
+    }
+
+    .frame-body {
+      grid-column: 1 / span 2;
+    }
+  }
 }
 
-article.right .corner-block {
-  grid-column: 2 / span 2;
-  grid-row: 1 / span 2;
-}
-
-article.left .frame-title {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-article.right .frame-title {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-article.left .frame-spine {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-article.right .frame-spine {
-  grid-column: 3;
-  grid-row: 3;
-}
-
-article.left .frame-body {
-  grid-column: 2 / span 2;
-  grid-row: 2 / span 2;
-}
-
-article.right .frame-body {
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 2;
-}
 
 .corner-block {
+  grid-row: 1 / span 2;
   background-color: v-bind(background);
   border-radius: var(--frame-radius);
 
@@ -146,9 +186,21 @@ article.right .frame-body {
   }
 }
 
-.frame-title,
+.frame-title {
+  grid-row: 1;
+  background-color: v-bind(background);
+  font-size: 28px;
+}
+
+@media (min-width:768px) {
+  .frame-title {
+    font-size: 44px;
+  }
+}
+
 .frame-spine {
   background-color: v-bind(background);
+  grid-row: 3;
 }
 
 .frame-title div {
@@ -156,7 +208,6 @@ article.right .frame-body {
   white-space: nowrap;
   background-color: var(--bs-light);
   display: flex;
-  font-size: 44px;
   font-family: 'Sora-bold';
   align-items: center;
   justify-content: space-between;
@@ -185,26 +236,32 @@ article.right .frame-spine div {
 }
 
 .frame-body {
+  grid-row: 2 / span 2;
   background-color: v-bind(background);
   border-radius: var(--frame-radius);
   color: v-bind(textColor);
   font-family: monospace;
-  padding: 2em;
   min-height: 200px;
 }
 
 article.left .frame-body {
-  box-shadow: 5px 5px 0px var(--bs-black);
+  box-shadow: 5px 5px 0px v-bind(accentBackground);
 }
 
 article.right .frame-body {
-  box-shadow: -5px 5px 0px var(--bs-black);
+  box-shadow: -5px 5px 0px v-bind(accentBackground);
 }
 
 .float-box {
-  // border: 1px solid var(--bs-light);
-  height: 40px;
-  width: 60px;
+  height: 0;
+  width: 0;
+}
+
+@media (min-width: 768px) {
+  .float-box {
+    height: 40px;
+    width: 60px;
+  }
 }
 
 article.left .float-box {
