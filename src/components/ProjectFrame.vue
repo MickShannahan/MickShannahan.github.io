@@ -27,7 +27,7 @@ defineProps({
           //:{{ title }}
         </div>
         <!-- links -->
-        <div class="d-flex flex-wrap justify-content-end gap-1">
+        <div class="d-none d-md-flex flex-wrap justify-content-end gap-1">
           <a v-for="link in links" :key="link.link" :href="link.link" target="_blank"
             :class="`btn btn-${link.color} rounded-4 px-md-3 d-flex`">
             <span class="d-none d-md-inline">{{ link.text }}</span>
@@ -189,12 +189,13 @@ article.right {
 .frame-title {
   grid-row: 1;
   background-color: v-bind(background);
-  font-size: 28px;
+  font-size: clamp(18px, 5vw, 44px);
 }
 
 @media (min-width:768px) {
   .frame-title {
     font-size: 44px;
+    white-space: nowrap;
   }
 }
 
@@ -205,7 +206,6 @@ article.right {
 
 .frame-title div {
   height: 100%;
-  white-space: nowrap;
   background-color: var(--bs-light);
   display: flex;
   font-family: 'Sora-bold';

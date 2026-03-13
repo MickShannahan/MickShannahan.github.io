@@ -6,8 +6,8 @@
 body {
   position: relative;
   background-color: var(--bs-primary);
-  width: 100dvw;
-  overflow-x: hidden;
+  // width: 100dvw;
+  // overflow-x: hidden;
 
   &:after {
     pointer-events: none;
