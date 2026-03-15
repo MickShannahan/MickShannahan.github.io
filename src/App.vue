@@ -24,8 +24,8 @@ const boollll = ref(false)
 </script>
 
 <template>
-  <LoadingCrossEffect :show="boollll" :inverted="boollll" />
-  <header class="bg-primary d-flex justify-content-between align-items-bottom">
+  <!-- <LoadingCrossEffect :show="boollll" :inverted="boollll" /> -->
+  <header class="bg-primary d-flex justify-content-between align-items-bottom ">
     <div>
       <h1 class="px-2 pt-4 text-light font-satoshi m-0 fw-bold">Mick Shannahan<span class="large-period">.</span>
       </h1>
@@ -66,7 +66,6 @@ h1 {
 
 .main-layout {
   flex-grow: 1;
-  height: 100%;
   // display: flex;
   // grid-template-columns: 150px 1fr;
 }
@@ -74,9 +73,8 @@ h1 {
 @media (min-width: 768px) {
   .main-layout {
     flex-grow: 1;
-    height: 100%;
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 100px 1fr;
   }
 }
 </style>
