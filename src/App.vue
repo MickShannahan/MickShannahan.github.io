@@ -48,7 +48,7 @@ h1 {
   position: relative;
   z-index: 1001;
   letter-spacing: 0;
-  font-size: 3em;
+  font-size: 2.8em;
   line-height: .85em;
   padding-bottom: .25em;
 }

@@ -20,7 +20,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav class="d-flex flex-column justify-content-between align-items-center sticky-top" :class="{ scrolled }">
+  <nav class="d-none d-md-flex flex-column justify-content-between align-items-center sticky-top" :class="{ scrolled }">
     <section :style="`opacity: ${scrolled ? 1 : 0}`" class="hidden-name">
       <div class="px-2 pb-2">
         <div>Mick</div>
@@ -54,9 +54,27 @@ onBeforeUnmount(() => {
 
   </nav>
 
-  <nav class="bg-primary d-flex d-md-none">
-
-  </nav>
+  <button class="btn btn-primary fs-1 mobile-nav-fab d-md-none d-block rounded-4 border border-primary"><i
+      class="mdi mdi-menu" data-bs-toggle="offcanvas" data-bs-target="#mobile-nav"></i>
+  </button>
+  <div class="offcanvas offcanvas-end" id="mobile-nav">
+    <div class="offcanvas-header text-bg-primary d-flex justify-content-end">
+      <button class="btn" data-bs-dismiss="offcanvas">
+        <i class="text-light mdi mdi-close fs-1"></i>
+      </button>
+    </div>
+    <div class="offcanvas-body text-bg-primary d-flex flex-column justify-content-center align-items-center gap-5">
+      <div>
+        <a href="" class="btn">one</a>
+      </div>
+      <div>
+        <a href="" class="btn">two</a>
+      </div>
+      <div>
+        <a href="" class="btn">three</a>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -84,6 +102,13 @@ nav.scrolled {
   transition: all .2s ease;
 }
 
+.mobile-nav-fab {
+  position: fixed;
+  top: .25em;
+  right: .25em;
+  z-index: 200;
+}
+
 
 a.btn {
   text-decoration: none;
@@ -91,6 +116,8 @@ a.btn {
   width: 60px;
   aspect-ratio: 1/1;
   border-radius: 1rem;
+  color: var(--bs-light);
+  font-family: 'Sora-Regular';
 }
 
 .nav-link {
@@ -101,5 +128,9 @@ a.btn {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.offcanvas {
+  width: 100%;
 }
 </style>

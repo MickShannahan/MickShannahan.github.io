@@ -10,7 +10,7 @@ const titles = [
   "Graphic Designer",
   "Game Developer",
   "Dungeon Master",
-  "Artist"
+  "Artist",
 ]
 
 const currentTextIndex = ref(0)
