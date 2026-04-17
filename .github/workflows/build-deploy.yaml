@@ -37,6 +37,8 @@ jobs:
       # Build the VUE application
       - name: Build the app 🏗️
         working-directory: ./
+        env:
+          VITE_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run build # Runs the 'build' script defined in the package.json file
 
       # Configure the GitHub Pages deployment
