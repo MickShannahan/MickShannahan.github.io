@@ -16,7 +16,15 @@ import noter2 from '../assets/img/noter-2.png'
 import noter3 from '../assets/img/noter-3.png'
 import noter4 from '../assets/img/noter-4.png'
 import noter5 from '../assets/img/noter-5.png'
+
+import normal1 from '../assets/img/normal-library-1.png'
+import normal2 from '../assets/img/normal-library-2.png'
+import normal3 from '../assets/img/normal-library-3.png'
+import normal4 from '../assets/img/normal-library-4.png'
+import normal5 from '../assets/img/normal-library-5.png'
+
 import figmaLogo from '../assets/img/figma-logo.svg'
+import normalLogo from '../assets/img/NormalLibraryLogo.svg'
 import codeworksLogo from '../assets/img/codeworks-course-logo.png'
 import noterLogo from '../assets/img/noter-logo.svg'
 import ProjectFrame from './ProjectFrame.vue'
@@ -85,9 +93,33 @@ import { ProjectLink } from '@/models/ProjectLink.js'
       </ProjectFrame>
     </div>
 
+    <!-- SECTION Normal_library -->
+    <div class="my-5">
+      <ProjectFrame title="Normal_Library" :cover-img="normalLogo" orientation="left" background="var(--bs-primary)"
+        textColor="var(--bs-dark)" accentBackground="var(--bs-black)" :links="[
+          new ProjectLink('mdi-github', 'repo', 'dark', 'https://github.com/MickShannahan/3d_library')
+        ]">
+        <p class="text-light">
+          3D printing is a magic technology. Brining a model from your computer into the real world feels unreal.
+          However through years of collecting minis and models I found just keeping them in the standard file browser
+          was a pain, and they take up so much space!
+        </p>
+        <p class="text-light">
+          Introducing <b>NORMAL_LIBRARY</b>. Named after 'normals', or the vectored angle a 3D face is pointing, I
+          created a library to store all my minis and models. Utilizing <b>Three.js</b> for the rendering and a
+          combination of <b>MongoDb</b> and <b>Azure</b> for storage. I created a model browser that creates 3D previews
+          of each model and it's parts. With searching tools like authors and tags, no more endless browsing through
+          cascading file structures and .zip files to find that model.
+        </p>
+
+        <ImageCarousel carouselId="normal-carousel" :images="[normal1, normal2, normal3, normal4, normal5,]"
+          bgColor="black" />
+      </ProjectFrame>
+    </div>
+
     <!-- SECTION NOTER -->
     <div class="my-5">
-      <ProjectFrame title="Noter" :cover-img="noterLogo" orientation="left" background="var(--bs-primary)"
+      <ProjectFrame title="Noter" :cover-img="noterLogo" orientation="right" background="var(--bs-purple)"
         accentBackground="var(--bs-dark)" :links="[
           new ProjectLink('mdi-arrow-top-right-thick', 'site', 'primary', 'https://cw-cloud-demo-d0aecab0e751.herokuapp.com/#/'),
           new ProjectLink('mdi-figma', 'Figma Mock', 'pink', 'https://www.figma.com/design/GTKQbvx6AeinXwQUzmkNDV/Dugeon-Noter?node-id=3-819&t=zO3Y6nBmCxpUH3p6-0'),
